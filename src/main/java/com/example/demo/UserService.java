@@ -12,15 +12,15 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    private List<Userr> users  = new ArrayList<>();
+    private List<User> users  = new ArrayList<>();
 
-    public List<Userr> getAllUsers() {
+    public List<User> getAllUsers() {
         users  = new ArrayList<>();
         userRepository.findAll().forEach(users::add); //use this as a return
         return users;
     }
 
-    public void addUser(Userr user){
+    public void addUser(User user){
         userRepository.save(user);
     }
 

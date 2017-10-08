@@ -20,7 +20,7 @@ public class UserController {
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping(value = "/get-all-users", method = RequestMethod.GET)
-    public List<Userr> response() {
+    public List<User> response() {
         return userService.getAllUsers();
     }
 
@@ -30,9 +30,9 @@ public class UserController {
         return "All entities has been deleted";
     }
 
-    @RequestMapping(value = "/add-user", method = RequestMethod.GET)
+    @RequestMapping(value = "/add-user", method = RequestMethod.POST)
     public String addUser(@RequestParam(value="name", defaultValue="Anonymous") String name) {
-        userService.addUser(new Userr((int) counter.incrementAndGet(), name));
+        userService.addUser(new User((int) counter.incrementAndGet(), name));
         return "user " +name+" added";
     }
 
