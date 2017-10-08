@@ -4,13 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class Userr {
 
     @Id
     private int id;
     private String name;
 
-    public User(int id, String name) {
+    public Userr () {}
+
+    public Userr(int id, String name) {
+        super();
         this.id = id;
         this.name = name;
     }
