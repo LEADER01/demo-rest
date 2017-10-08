@@ -12,7 +12,7 @@ public class testGetController {
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping(value = "/test-get", method = RequestMethod.GET)
-    public testGet greeting(@RequestParam(value="name", defaultValue="World") String name) {
+    public testGet response(@RequestParam(value="name", defaultValue="World") String name) {
         return new testGet(counter.incrementAndGet(),
                 String.format(template, name));
     }
