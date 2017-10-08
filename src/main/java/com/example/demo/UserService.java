@@ -12,19 +12,19 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    private List<User> users  = new ArrayList<>();
+    private List<User> users  = new ArrayList<>(); //can be local but shouldnt be local
 
-    public List<User> getAllUsers() {
+    List<User> getAllUsers() {
         users  = new ArrayList<>();
-        userRepository.findAll().forEach(users::add); //use this as a return
+        userRepository.findAll().forEach(users::add);
         return users;
     }
 
-    public void addUser(User user){
+    void addUser(User user){
         userRepository.save(user);
     }
 
-    public void removeUsers (){
+    void removeUsers (){
         userRepository.deleteAll();
     }
 }
